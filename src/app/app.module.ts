@@ -14,6 +14,11 @@ import { HomeComponent } from './main/home/home.component';
 import { RegisteredformComponent } from './main/registeredform/registeredform.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
+//https://material.angular.io/components
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +30,10 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDividerModule,
     RouterModule.forRoot([
       {path: 'home', component: HomeComponent},
       {path: 'form', component: FormComponent},
