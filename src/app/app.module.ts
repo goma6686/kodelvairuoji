@@ -12,6 +12,7 @@ import { LinksComponent } from './header/links/links.component';
 import { FormComponent } from './main/form/form.component';
 import { HomeComponent } from './main/home/home.component';
 import { RegisteredformComponent } from './main/registeredform/registeredform.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RegisteredformComponent } from './main/registeredform/registeredform.co
       {path: 'form', component: FormComponent},
       {path: 'registeredform', component: RegisteredformComponent},
     ]),
-    AppRoutingModule
+    AppRoutingModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
