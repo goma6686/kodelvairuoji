@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {CommentService} from "../../services/comment.service";
 
 @Component({
   selector: 'app-form',
@@ -8,13 +9,18 @@ import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 })
 export class FormComponent implements OnInit {
 
-  toppings = new FormControl('');
-  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
+  comments = new FormControl('');
+  carNumber: string = "";
+  message: string = "";
+  presetComments: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
 
-  constructor() { }
-
-  ngOnInit(): void {
-    
+  constructor(private commentService: CommentService) {
   }
 
+  ngOnInit(): void {
+  }
+
+  addComment() {
+    this.commentService.addComment(this.carNumber, this.message);
+  }
 }
