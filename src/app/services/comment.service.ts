@@ -31,8 +31,8 @@ export class CommentService {
     );
   }
 
-  getComments(carNumber: string): Observable<Comment[] | undefined> {
-    return of(this.comments.get(carNumber));
+  getComments(carNumber: string): Observable<Comment[]> {
+    return of(this.comments.get(carNumber) || []);
   }
 
   private setComments() {
