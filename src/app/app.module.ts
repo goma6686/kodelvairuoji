@@ -22,6 +22,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { RegisterComponent } from './main/auth/register/register.component';
+import { LoginComponent } from './main/auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     LinksComponent,
     FormComponent,
     HomeComponent,
-    RegisteredformComponent
+    RegisteredformComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
