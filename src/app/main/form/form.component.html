@@ -1,19 +1,18 @@
 <div>
-    <a mat-button >< Back</a>
-    <h3>Rašyk:</h3>
-    <form action="#">
-      <label for="number">Numeris</label>
-      <input type="text" name="name">
-  
-      <label for="message">Message</label>
-      <mat-form-field>
-        <mat-label>Toppings</mat-label>
-        <mat-select [formControl]="toppings" multiple>
-          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-      
-  
-    <input type="submit" value="Submit">
-    </form>
+  <a mat-button>< Back</a>
+  <h3>Rašyk:</h3>
+  <form (ngSubmit)="addComment()">
+    <label for="number">Numeris</label>
+    <input id="number" type="text" name="name" [(ngModel)]="carNumber">
+
+    <label for="message">Message</label>
+    <mat-form-field>
+      <mat-label>Comments</mat-label>
+      <mat-select [(value)]="message" id="message" [formControl]="comments">
+        <mat-option *ngFor="let comment of presetComments" [value]="comment">{{comment}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button type="submit">Submit</button>
+  </form>
 </div>
