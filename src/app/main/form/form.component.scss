@@ -2,7 +2,7 @@ h3 {
     text-align: center;
 }
 
-input[type=text], textarea {
+input[type=text], mat-form-field {
     width: 100%;
     padding: 1em;
     box-sizing: border-box;
@@ -12,17 +12,11 @@ input[type=text], textarea {
 }
 
 input[type=submit] {
-    background-color: rgb(10, 10, 10);
     font-size: large;
     border: none;
     cursor: pointer;
 }
 
 input[type=submit], a {
-    color: #e4e4b1;
     text-decoration: underline;
-}
-
-input[type=submit]:hover, a:hover {
-    color: #fff;
 }
