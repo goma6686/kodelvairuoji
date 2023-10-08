@@ -6,8 +6,14 @@
     <button mat-raised-button>Tikrinti</button>
   </form>
 
-  <table>
-    <tr *ngFor="let comment of comments | async; let i = index">{{i + " " + comment.text}}</tr>
+  <table mat-table [dataSource]="comments" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="comment">
+      <th mat-header-cell *matHeaderCellDef> No.</th>
+      <td mat-cell *matCellDef="let element"> {{element.text}} </td>
+    </ng-container>
+
+    <tr mat-row *matRowDef="let row; columns: ['comment'];"></tr>
   </table>
 
 </div>

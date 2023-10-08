@@ -2,8 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgFor} from '@angular/common';
-import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
-import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
+import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from '@abacritt/angularx-social-login';
 
 import {RouterModule} from '@angular/router';
 
@@ -24,6 +23,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {ViewCommentComponent} from './main/view-comment/view-comment.component';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -53,7 +53,8 @@ import {ViewCommentComponent} from './main/view-comment/view-comment.component';
       {path: 'full-form', component: RegisteredformComponent},
     ]),
     AppRoutingModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    MatTableModule
   ],
   providers: [
     {
