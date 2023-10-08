@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {CommentService} from "../../services/comment.service";
+import {UserService} from "../../services/user.service";
 
 @Component({
   selector: 'app-form',
@@ -13,14 +14,21 @@ export class FormComponent implements OnInit {
   carNumber: string = "";
   message: string = "";
   presetComments: string[] = ['Vairavimas (KET)', 'Parkavimas', 'Vairavimo etiketas', 'Įvaizdis / Dizainas'];
+  presetText: string = "";
+  text: string = "";
 
-  constructor(private commentService: CommentService) {
+  constructor(private commentService: CommentService,
+              public userService: UserService) {
   }
 
   ngOnInit(): void {
   }
 
   addComment() {
-    this.commentService.addComment(this.carNumber, this.message);
+    if (this.userService.isLoggedIn.getValue()) {
+      this.commentService.addComment(this.carNumber, this.text !== "" ? this.text : this.presetText);
+    } else {
+      this.commentService.addComment(this.carNumber, this.presetText);
+    }
   }
 }

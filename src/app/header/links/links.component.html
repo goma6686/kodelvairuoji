@@ -5,8 +5,10 @@
         <button mat-raised-button *ngIf="currentRoute === '/write'" routerLink="/view">Tikrink atsiliepimus</button>
       </li>
       <li>
-        <button *ngIf="!loggedIn" mat-raised-button (click)="logIn()">Login</button>
-        <button *ngIf="loggedIn" mat-raised-button (click)="logOut()">Log out</button>
+        <button *ngIf="!userService.isLoggedIn.getValue()" mat-raised-button (click)="userService.logIn()">Login
+        </button>
+        <button *ngIf="userService.isLoggedIn.getValue()" mat-raised-button (click)="userService.logOut()">Log out
+        </button>
       </li>
     </ul>
 </nav>

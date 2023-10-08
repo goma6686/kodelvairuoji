@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {UserService} from "../../services/user.service";
 
@@ -10,10 +10,10 @@ import {UserService} from "../../services/user.service";
 export class LinksComponent implements OnInit{
 
   currentRoute: string = '';
-  loggedIn: boolean = false;
 
   constructor(private router: Router,
-              private userService: UserService) {
+              private ref: ChangeDetectorRef,
+              public userService: UserService) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.currentRoute = event.urlAfterRedirects;
@@ -22,14 +22,6 @@ export class LinksComponent implements OnInit{
    }
 
   ngOnInit(): void {
-    this.userService.isLoggedIn.subscribe(isLoggedIn => this.loggedIn = isLoggedIn);
-  }
-
-  logIn() {
-    this.userService.logIn();
-  }
-
-  logOut() {
-    this.userService.logOut();
+    this.userService.isLoggedIn.subscribe(() => this.ref.detectChanges());
   }
 }
