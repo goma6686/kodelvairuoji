@@ -7,19 +7,24 @@
 
     <div class="block">
       <label>Atsiliepimo tipas</label>
-      <mat-radio-group [value]="positive" aria-label="Select an option">
-        <mat-radio-button value="true">Teigiamas</mat-radio-button>
-        <mat-radio-button value="false">Neigiamas</mat-radio-button>
+      <mat-radio-group [(ngModel)]="positive" name="tipas" aria-label="Select an option">
+        <mat-radio-button [value]="true">Teigiamas</mat-radio-button>
+        <mat-radio-button [value]="false">Neigiamas</mat-radio-button>
       </mat-radio-group>
     </div>
 
     <div class="block">
       <label for="message">Pasirink kategoriją</label>
       <mat-form-field>
-        <mat-select [(value)]="message" id="message" [formControl]="comments">
+        <mat-select [(value)]="presetText" id="message" [formControl]="comments">
           <mat-option *ngFor="let comment of presetComments" [value]="comment">{{comment}}</mat-option>
         </mat-select>
       </mat-form-field>
+    </div>
+
+    <div>
+      <label for="vieta">Vieta</label>
+      <input name="vieta" id="vieta" type="text" [(ngModel)]="location">
     </div>
 
     <div *ngIf="userService.isLoggedIn.getValue()">

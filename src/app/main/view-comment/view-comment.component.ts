@@ -21,5 +21,6 @@ export class ViewCommentComponent implements OnInit {
 
   getComment(): void {
     this.comments = this.commentService.getComments(this.carNumber);
+    this.comments.subscribe(value => console.log(value));
   }
 }

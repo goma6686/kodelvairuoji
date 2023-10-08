@@ -13,10 +13,10 @@ export class FormComponent implements OnInit {
 
   comments = new FormControl('');
   carNumber: string = "";
-  message: string = "";
   presetComments: string[] = ['Vairavimas (KET)', 'Parkavimas', 'Vairavimo etiketas', 'Įvaizdis / Dizainas'];
   presetText: string = "";
   text: string = "";
+  location: string = "";
   positive: boolean | undefined;
 
   constructor(private commentService: CommentService,
@@ -29,11 +29,11 @@ export class FormComponent implements OnInit {
 
   addComment() {
     if (this.userService.isLoggedIn.getValue()) {
-      this.commentService.addComment(this.carNumber, this.text !== "" ? this.text : this.presetText, this.positive || true);
+      this.commentService.addComment(this.carNumber, this.location, this.text !== "" ? this.text : this.presetText, this.positive || false);
     } else {
-      this.commentService.addComment(this.carNumber, this.presetText, this.positive || true);
+      this.commentService.addComment(this.carNumber, this.location, this.presetText, this.positive || false);
     }
-
+    console.log(this.positive);
     this.router.navigate(['/view']);
   }
 }
