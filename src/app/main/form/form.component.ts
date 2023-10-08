@@ -12,7 +12,7 @@ export class FormComponent implements OnInit {
   comments = new FormControl('');
   carNumber: string = "";
   message: string = "";
-  presetComments: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
+  presetComments: string[] = ['Vairavimas (KET)', 'Parkavimas', 'Vairavimo etiketas', 'Įvaizdis / Dizainas'];
 
   constructor(private commentService: CommentService) {
   }

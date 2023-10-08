@@ -18,6 +18,7 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 //https://material.angular.io/components
 import {MatCardModule} from '@angular/material/card';
+import {MatRadioModule} from '@angular/material/radio';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
@@ -37,6 +38,7 @@ import {ViewCommentComponent} from './main/view-comment/view-comment.component';
     BrowserModule,
     FormsModule,
     MatCardModule,
+    MatRadioModule,
     MatButtonModule,
     MatDividerModule,
     MatFormFieldModule,
