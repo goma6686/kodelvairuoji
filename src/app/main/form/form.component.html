@@ -3,13 +3,19 @@
     <label for="number">Numeris</label>
     <input id="number" type="text" name="name" [(ngModel)]="carNumber">
 
-    <label for="message">Message</label>
+    <label for="message">Komentaras</label>
     <mat-form-field>
       <mat-label>Comments</mat-label>
-      <mat-select [(value)]="message" id="message" [formControl]="comments">
+      <mat-select [(value)]="presetText" id="message" [formControl]="comments">
         <mat-option *ngFor="let comment of presetComments" [value]="comment">{{comment}}</mat-option>
       </mat-select>
     </mat-form-field>
+
+    <div *ngIf="userService.isLoggedIn.getValue()">
+      <label for="detailed">Detalus komentaras</label>
+      <input name="detailed" id="detailed" type="text" [(ngModel)]="text">
+    </div>
+
 
     <button mat-raised-button type="submit">Submit</button>
   </form>
