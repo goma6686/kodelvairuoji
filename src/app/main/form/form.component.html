@@ -7,9 +7,9 @@
 
     <div class="block">
       <label>Atsiliepimo tipas</label>
-      <mat-radio-group aria-label="Select an option">
-        <mat-radio-button value="1">Teigiamas</mat-radio-button>
-        <mat-radio-button value="2">Neigiamas</mat-radio-button>
+      <mat-radio-group [value]="positive" aria-label="Select an option">
+        <mat-radio-button value="true">Teigiamas</mat-radio-button>
+        <mat-radio-button value="false">Neigiamas</mat-radio-button>
       </mat-radio-group>
     </div>
 
