@@ -5,7 +5,8 @@
         <button mat-raised-button *ngIf="currentRoute === '/write'" routerLink="/view">Tikrink atsiliepimus</button>
       </li>
       <li>
-        <button mat-raised-button routerLink="/view">Login</button>
+        <button *ngIf="!loggedIn" mat-raised-button (click)="logIn()">Login</button>
+        <button *ngIf="loggedIn" mat-raised-button (click)="logOut()">Log out</button>
       </li>
     </ul>
 </nav>
