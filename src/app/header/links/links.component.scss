@@ -2,7 +2,11 @@
     width: 100%;
     margin-top: 0.2em;
     margin-bottom: 0.2em;
+    padding: 0.5em;
     list-style: none;
+    background-color: #EAF6F8;
+    border-radius: 20px;
+    border: 2px solid #FF914D;
   }
   
   #navbar ul {
@@ -11,8 +15,6 @@
     margin: 0;
     list-style-type: none;
     justify-content: space-evenly;
-    background-color: rgb(10, 10, 10);
-    border: 0.2em double #fff;
   }
   
   // navigation links
@@ -24,6 +26,6 @@
   
   // navigation link when a link is hovered over
   #navbar li:hover {
-    color: #fff;
+    color: #000000;
     text-decoration: underline;
   }

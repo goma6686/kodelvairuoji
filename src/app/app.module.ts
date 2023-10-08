@@ -2,7 +2,8 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgFor} from '@angular/common';
-import { GoogleLoginProvider } from 'angularx-social-login';
+import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 
 import {RouterModule} from '@angular/router';
 
@@ -43,6 +44,8 @@ import {ViewCommentComponent} from './main/view-comment/view-comment.component';
     FormsModule,
     ReactiveFormsModule,
     NgFor,
+    BrowserModule,
+    SocialLoginModule,
     RouterModule.forRoot([
       {path: 'home', component: FormComponent},
       {path: 'full-form', component: RegisteredformComponent},
@@ -50,18 +53,25 @@ import {ViewCommentComponent} from './main/view-comment/view-comment.component';
     AppRoutingModule,
     NoopAnimationsModule
   ],
-  providers: [{
-    provide: 'SocialAuthServiceConfig',
-    useValue: {
-      autoLogin: true, //keeps the user signed in
-      providers: [
-        {
-          id: GoogleLoginProvider.PROVIDER_ID,
-          provider: new GoogleLoginProvider('551554914709-qm8am9vc5nrfai80rd0tburs9pu678jd.apps.googleusercontent.com') // your client id
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '551554914709-qm8am9vc5nrfai80rd0tburs9pu678jd.apps.googleusercontent.com'
+            )
+          }
+        ],
+        onError: (err) => {
+          console.error(err);
         }
-      ]
+      } as SocialAuthServiceConfig,
     }
-  }],
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

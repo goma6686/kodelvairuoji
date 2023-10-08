@@ -1,10 +1,9 @@
 <div>
-  <a mat-button routerLink="/">< Back</a>
   <form (ngSubmit)="getComment()">
     <label for="number">Numeris</label>
     <input id="number" type="text" name="name" [(ngModel)]="carNumber">
 
-    <button mat-button>Tikrinti</button>
+    <button mat-raised-button>Tikrinti</button>
   </form>
 
   <table>
