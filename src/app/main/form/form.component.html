@@ -1,20 +1,26 @@
 <div>
   <form (ngSubmit)="addComment()">
-    <label for="number">Numeris</label>
-    <input id="number" type="text" name="name" [(ngModel)]="carNumber">
+    <div class="block">
+      <label for="number">Numeris</label>
+      <input id="number" type="text" name="name" [(ngModel)]="carNumber">
+    </div>
 
-    <mat-radio-group aria-label="Select an option">
-      <mat-radio-button value="1">Teigiamas</mat-radio-button>
-      <mat-radio-button value="2">Neigiamas 2</mat-radio-button>
-    </mat-radio-group>
-    
+    <div class="block">
+      <label>Atsiliepimo tipas</label>
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">Teigiamas</mat-radio-button>
+        <mat-radio-button value="2">Neigiamas 2</mat-radio-button>
+      </mat-radio-group>
+    </div>
 
-    <label for="message">Pasirink kategoriją</label>
-    <mat-form-field>
-      <mat-select [(value)]="message" id="message" [formControl]="comments">
-        <mat-option *ngFor="let comment of presetComments" [value]="comment">{{comment}}</mat-option>
-      </mat-select>
-    </mat-form-field>
+    <div class="block">
+      <label for="message">Pasirink kategoriją</label>
+      <mat-form-field>
+        <mat-select [(value)]="message" id="message" [formControl]="comments">
+          <mat-option *ngFor="let comment of presetComments" [value]="comment">{{comment}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
     <button mat-raised-button type="submit">Submit</button>
   </form>
