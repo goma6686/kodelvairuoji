@@ -12,7 +12,6 @@ import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {LinksComponent} from './header/links/links.component';
 import {FormComponent} from './main/form/form.component';
-import {RegisteredformComponent} from './main/registeredform/registeredform.component';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 //https://material.angular.io/components
@@ -31,7 +30,6 @@ import {MatTableModule} from "@angular/material/table";
     HeaderComponent,
     LinksComponent,
     FormComponent,
-    RegisteredformComponent,
     ViewCommentComponent
   ],
   imports: [
@@ -50,7 +48,6 @@ import {MatTableModule} from "@angular/material/table";
     SocialLoginModule,
     RouterModule.forRoot([
       {path: 'home', component: FormComponent},
-      {path: 'full-form', component: RegisteredformComponent},
     ]),
     AppRoutingModule,
     NoopAnimationsModule,
