@@ -3,19 +3,19 @@ main {
     color: black;
     width: 80%;
     margin: 0 auto;
-    padding: 5em;
+  padding: 2rem;
 }
 
 app-header{
     text-align: center;
 }
-  
+
 section {
     border-style: double;
     padding: 1em;
     border-radius: 20px;
     border: 2px solid #6f7cf1;
-    
+
 }
 
 @media only screen and (max-width: 800px) {

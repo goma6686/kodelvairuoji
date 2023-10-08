@@ -27,9 +27,14 @@ section {
 
 .title-bar, .main-footer {
   display: flex;
-  align-items: center;
-  height: 2.3rem;
+  justify-content: center;
+  height: 108px;
   padding: 0.2rem 0.1rem;
+  border-radius: 5px;
+}
+
+.round {
+  border-radius: 20px;
 }
 
 header, footer {

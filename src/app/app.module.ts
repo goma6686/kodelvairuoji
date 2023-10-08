@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {NgFor} from '@angular/common';
+import {NgFor, NgOptimizedImage} from '@angular/common';
 import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from '@abacritt/angularx-social-login';
 
 import {RouterModule} from '@angular/router';
@@ -51,7 +51,8 @@ import {MatTableModule} from "@angular/material/table";
     ]),
     AppRoutingModule,
     NoopAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    NgOptimizedImage
   ],
   providers: [
     {
