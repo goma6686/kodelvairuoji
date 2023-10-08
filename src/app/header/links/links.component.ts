@@ -1,5 +1,6 @@
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-links',
@@ -8,9 +9,15 @@ import { Component } from '@angular/core';
 })
 export class LinksComponent implements OnInit{
 
-  user: any;
-  loggedIn: any;
-  constructor() { }
+  currentRoute: string = '';
+  
+  constructor(private router: Router) { 
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.currentRoute = event.urlAfterRedirects;
+      }
+    });
+   }
   
   ngOnInit(): void {
   }

@@ -6,9 +6,10 @@ import {RegisteredformComponent} from './main/registeredform/registeredform.comp
 import {ViewCommentComponent} from "./main/view-comment/view-comment.component";
 
 const routes: Routes = [
-  {path: '', component: FormComponent},
+  {path: '', redirectTo: 'write', pathMatch: 'full'},
+  {path: 'write', component: FormComponent},
   {path: 'view', component: ViewCommentComponent},
-  {path: 'registeredform', component: RegisteredformComponent/*, canActivate: [SocialAuthService]*/},
+  {path: 'registeredform', component: RegisteredformComponent},
 ];
 
 @NgModule({

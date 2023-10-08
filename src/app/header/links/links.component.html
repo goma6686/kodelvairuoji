@@ -1,7 +1,8 @@
 <nav id="navbar">
     <ul>
       <li>
-        <button mat-raised-button routerLink="/view">Tikrink atsiliepimus</button>
+        <button mat-raised-button *ngIf="currentRoute === '/view'" routerLink="/write">Rašyk atsiliepimą</button>
+        <button mat-raised-button *ngIf="currentRoute === '/write'" routerLink="/view">Tikrink atsiliepimus</button>
       </li>
       <li>
         <button mat-raised-button routerLink="/view">Login</button>
