@@ -5,6 +5,10 @@ html, body {
   color: #6390C0;
 }
 
+label {
+  color: #000000 ;
+}
+
 header, footer, nav, input[type=submit] {
   font-family: poppins;
 }
@@ -14,7 +18,7 @@ h1 {
 }
 
 section {
-  background-color: #EAF6F8;
+  background-color: #f0f4f5;
 }
 
 * {
@@ -39,7 +43,7 @@ header, footer {
     text-align: center;
     a {
       font-size: larger;
-      color: #6390C0;
+      color: #82d7ff;
       text-decoration: none;
     }
   }
